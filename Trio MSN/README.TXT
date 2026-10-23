@@ -1,12 +1,16 @@
 ------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all they need to know. The comments should usually include at least:
+Trabalho final da disciplina de Introdução a Programação Orientada a 
+Objetos, UFLA 2026/2.
+Grupo: Trio MSN
+Participantes: Carlos Henrique Pereira, Bruno Gualberto, Luís Macedo.
 ------------------------------------------------------------------------
 
-PROJECT TITLE:
-PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
+PROJECT TITLE: Diablo do PéVerde
+PURPOSE OF PROJECT: Aplicar conhecimentos desenvolvidos de POO em Java 
+VERSION or DATE: 23/10/2026
+HOW TO START THIS PROJECT: Definindo quais partes do jogo cada participante deve
+			   ficar responsavel e atualizar o repositório a cada nova 
+			   modificação para que todos fiquem cientes da evolução do 
+                           projeto.
+
 USER INSTRUCTIONS:
