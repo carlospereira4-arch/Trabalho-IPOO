@@ -18,6 +18,7 @@ public class Fase1 extends Fase
     {    
         super("piso_fase1_16bits.png", 1);
         musica.setVolume(35);
+        prepare();
     }
 
     /** Inicia a musica quando a fase esta rodando. */
@@ -36,4 +37,10 @@ public class Fase1 extends Fase
         super.stopped();
         musica.pause();
     }
+
+    private void prepare(){
+        Inimigo inimigo1 = new Inimigo();
+        addObject(inimigo1, 450, 352);
+    }
+    
 }
