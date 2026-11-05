@@ -1,5 +1,5 @@
 import greenfoot.*;
-import java.util.ArrayList;
+import java.util.*;
 /**
  * Write a description of class Jogador here.
  * 
@@ -12,7 +12,7 @@ public class Jogador extends Personagem
     private Vida vidaJogador;
     
     public Jogador(){
-        super(30, 4, 100);
+        super(10, 4, 100);
         vidaJogador = getVida();
         inventario = new ArrayList<>();
     }
@@ -21,23 +21,34 @@ public class Jogador extends Personagem
         movimentar();
         sofrerDano();
         morrer();
+        atacar();
     }
     
     public void movimentar(){
         int vel = getVelocidade();
         if (Greenfoot.isKeyDown("d")){
+            setRotation(0);
             move(vel);
+            setRotation(270);
         }
         
         if (Greenfoot.isKeyDown("a")){
-            move(vel * -1);
+            setRotation(180);
+            move(vel);
+            setRotation(90);
         }
-    }
-    
-    public void morrer(){
-        if (vidaJogador.obterVida() == 0){
-            getWorld().removeObject(this);
+        if (Greenfoot.isKeyDown("w")){
+            setRotation(270);
+            move(vel);
+            setRotation(180);
         }
+        
+        if (Greenfoot.isKeyDown("s")){
+            setRotation(90);
+            move(vel);
+            setRotation(0);
+        }
+        
     }
     
     public void sofrerDano(){
@@ -52,6 +63,25 @@ public class Jogador extends Personagem
         if (inimigo != null){
             vidaJogador.receberDano(inimigo.atacar());
             tempoRecuperar = 180;
+        }
+    }
+    
+    public void atacar(){
+        int intervaloAtaque = 0;
+        
+        if (intervaloAtaque > 0){
+            intervaloAtaque--;
+            return;
+        }
+        
+        if (Greenfoot.isKeyDown("space")){
+            List<Inimigo> inimigos = getObjectsInRange(100, Inimigo.class);
+            if (!inimigos.isEmpty()){
+                Inimigo alvo = inimigos.get(0);
+                alvo.levarDano(getDano());
+                intervaloAtaque = 180;
+            }
+            
         }
     }
     

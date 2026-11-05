@@ -5,18 +5,17 @@ public class TelaInicial extends World
 {
     public TelaInicial()
     {
-        super(800, 400, 1);
+        super(1200, 800, 1);
 
         // O fundo e o painel deixam as opcoes faceis de ler.
         setBackground("cenario_fase1_16bits.png");
         getBackground().setColor(new Color(20, 15, 20, 220));
-        getBackground().fillRect(140, 65, 520, 270);
+        getBackground().fillRect(340, 265, 520, 270);
 
-        showText("DIABLO DO PÉ-VERDE", 400, 110);
-        showText("Uma aventura pelas profundezas", 400, 155);
-        showText("ENTER - Jogar", 400, 220);
-        showText("I - Instrucoes", 400, 270);
-
+        showText("DIABLO DO PÉ-VERDE", 600, 305);
+        showText("Uma aventura pelas profundezas", 600, 355);
+        showText("ENTER - Jogar", 600, 425);
+        showText("I - Instrucoes", 600, 475);
         // Creditos alinhados a direita, com uma pequena margem.
         GreenfootImage creditos = new GreenfootImage(
             "Estudantes UFLA\nBruno Gualberto, Carlos Henrique, Lu\u00eds Macedo",

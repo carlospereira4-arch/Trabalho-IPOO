@@ -17,16 +17,16 @@ public class Fase extends World
 
     public Fase(String imagem, int numero, Partida partida)
     {
-        super(800, 400, 1);
+        super(1200, 800, 1);
         this.partida = partida;
         this.numero = numero;
         setBackground(imagem);
 
         // Faixa escura para os textos aparecerem sobre qualquer piso.
         getBackground().setColor(new Color(15, 10, 15));
-        getBackground().fillRect(0, 0, 800, 40);
+        getBackground().fillRect(0, 0, 1200, 40);
         showText("Pontos: 0", 100, 20);
-        showText("Fase " + numero, 400, 20);
+        showText("Fase " + numero, 600, 20);
         atualizarPainel();
     }
 
@@ -116,7 +116,7 @@ public class Fase extends World
             int minutos = segundosTotais / 60;
             int segundos = segundosTotais % 60;
             String tempo = String.format("%02d:%02d", minutos, segundos);
-            showText("Tempo: " + tempo, 690, 20);
+            showText("Tempo: " + tempo, 1000, 20);
             ultimoSegundo = segundosTotais;
         }
     }

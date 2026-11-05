@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Perseguidor extends Personagem
+public class Perseguidor extends Inimigo
 {
     
     
@@ -14,13 +14,14 @@ public class Perseguidor extends Personagem
         super(1, 3, 75);
     }
     
-    
-    /**
-     * Act - do whatever the Perseguidor wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act()
     {
         // Add your action code here.
     }
+    
+    @Override
+    public void movimentar(){
+        
+    }
+    
 }

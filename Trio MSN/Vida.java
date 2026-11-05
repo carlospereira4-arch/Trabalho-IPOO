@@ -35,6 +35,7 @@ public class Vida
     
     public void receberDano(int dano){
         vida -= dano;
+        if (vida < 0) vida = 0;
     }
     
 }

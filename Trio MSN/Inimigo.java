@@ -7,26 +7,39 @@ import greenfoot.*;
  */
 public class Inimigo extends Personagem
 {
-     private String nome;
+     private int xMax, xMin, yMax, yMin;
      
-     public Inimigo (){
-        super(1, 3,100);
-        nome = "Gladiador Patrulheiro";   
+     public Inimigo (int xMax, int xMin, int yMax, int yMin){
+        super(1, 2,100);
+        this.xMax = xMax;
+        this.xMin = xMin;
+        this.yMax = yMax;
+        this.yMin = yMin;
+     
         }
         
+    public Inimigo(int dano, int velocidade, int vida){
+        super(dano, velocidade, vida);
+    }
+        
     public void act(){
-        patrulhar();
+        movimentar();
     }    
     
-    public void patrulhar(){
+    public void movimentar(){
         int vel = getVelocidade();
-        move(vel);
-        if (getX() >= 700){
-             vel = vel * -1;
-        } else if (getX() <= 450){
-            vel = vel * -1;
+        setRotation(0);
+        setRotation(270);
+        if (getY() <= yMin && getX() < xMax) {          
+            setRotation(0);
+        } else if (getX() >= xMax && getY() < yMax) {  
+            setRotation(90);
+        } else if (getY() >= yMax && getX() > xMin) {   
+            setRotation(180);
+        } else {                                      
+            setRotation(270);
         }
-        setVelocidade(vel);
+        move(vel);
         
     }
     

@@ -33,4 +33,16 @@ public class Personagem extends Actor
     public int getDano(){
         return dano;
     }
+    
+    public void levarDano(int danoSofrido){
+        vida.receberDano(danoSofrido);
+        morrer();
+    }
+    
+    public void morrer(){
+        if (vida.obterVida() == 0){
+            getWorld().removeObject(this);
+        }
+    }
+    
 }

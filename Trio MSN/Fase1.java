@@ -39,12 +39,13 @@ public class Fase1 extends Fase
     }
     
     private void prepare(){
+        //incializa o jogador no spawn
         Jogador jogador = new Jogador();
         addObject(jogador, 100, 366);
         
-        
-        Inimigo inimigo1 = new Inimigo();
-        addObject(inimigo1, 450, 352);
+        //Spawn dos inimigos
+        Inimigo inimigo1 = new Inimigo(1000, 650, 700, 200);
+        addObject(inimigo1, 750, 352);
         
         
     }    
