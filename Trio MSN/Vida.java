@@ -14,7 +14,7 @@ public class Vida
         vidaMaxima = vida;
     }
     
-    public int getVida(){
+    public int obterVida(){
         return vida;
     }
     
@@ -35,6 +35,7 @@ public class Vida
     
     public void receberDano(int dano){
         vida -= dano;
+        if (vida < 0) vida = 0;
     }
     
 }

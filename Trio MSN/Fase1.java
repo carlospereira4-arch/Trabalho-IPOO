@@ -37,10 +37,16 @@ public class Fase1 extends Fase
         super.stopped();
         musica.pause();
     }
-
-    private void prepare(){
-        Inimigo inimigo1 = new Inimigo();
-        addObject(inimigo1, 450, 352);
-    }
     
+    private void prepare(){
+        //incializa o jogador no spawn
+        Jogador jogador = new Jogador();
+        addObject(jogador, 100, 366);
+        
+        //Spawn dos inimigos
+        Inimigo inimigo1 = new Inimigo(1000, 650, 700, 200);
+        addObject(inimigo1, 750, 352);
+        
+        
+    }    
 }
