@@ -10,9 +10,10 @@ public class Jogador extends Personagem
 {
     private ArrayList<String> inventario;
     private Vida vidaJogador;
+    private int intervalo;
     
     public Jogador(){
-        super(10, 4, 100);
+        super(15, 4, 100);
         vidaJogador = getVida();
         inventario = new ArrayList<>();
     }
@@ -52,25 +53,24 @@ public class Jogador extends Personagem
     }
     
     public void sofrerDano(){
-        int tempoRecuperar = 0;
         
-        if (tempoRecuperar > 0){
-            tempoRecuperar--;
+        if (intervalo > 0){
+            intervalo--;
             return;
         }
         
         Inimigo inimigo = (Inimigo) getOneIntersectingObject(Inimigo.class);
         if (inimigo != null){
             vidaJogador.receberDano(inimigo.atacar());
-            tempoRecuperar = 180;
+            intervalo = 10;
         }
     }
     
+    
     public void atacar(){
-        int intervaloAtaque = 0;
         
-        if (intervaloAtaque > 0){
-            intervaloAtaque--;
+        if (intervalo > 0){
+            intervalo--;
             return;
         }
         
@@ -78,8 +78,10 @@ public class Jogador extends Personagem
             List<Inimigo> inimigos = getObjectsInRange(100, Inimigo.class);
             if (!inimigos.isEmpty()){
                 Inimigo alvo = inimigos.get(0);
+                Greenfoot.playSound("somgolpe.wav");
                 alvo.levarDano(getDano());
-                intervaloAtaque = 180;
+                alvo.levarStagger();
+                intervalo = 7;
             }
             
         }

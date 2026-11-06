@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.*;
 /**
  * Write a description of class Perseguidor here.
  * 
@@ -8,20 +8,34 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Perseguidor extends Inimigo
 {
-    
+    private int visao;
     
     public Perseguidor(){
-        super(1, 3, 75);
+        super(15, 3, 75);
+        visao = 400;
     }
     
     public void act()
     {
-        // Add your action code here.
+        verAlvo();
+        atacar();
     }
     
     @Override
     public void movimentar(){
-        
+        move(getVelocidade());
+    }
+    
+    
+    public void verAlvo(){
+        List<Jogador> jogador = getObjectsInRange(visao, Jogador.class);
+        if (!jogador.isEmpty()) { //Jogador vivo
+            Jogador alvo = jogador.get(0);
+            turnTowards(alvo.getX(), alvo.getY());
+            movimentar();
+        } else {
+            return;
+        }
     }
     
 }

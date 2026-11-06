@@ -8,9 +8,10 @@ import greenfoot.*;
 public class Inimigo extends Personagem
 {
      private int xMax, xMin, yMax, yMin;
+     private int tempoStagger = 0;
      
      public Inimigo (int xMax, int xMin, int yMax, int yMin){
-        super(1, 2,100);
+        super(20, 3,100);
         this.xMax = xMax;
         this.xMin = xMin;
         this.yMax = yMax;
@@ -27,6 +28,12 @@ public class Inimigo extends Personagem
     }    
     
     public void movimentar(){
+        
+        if (tempoStagger > 0){
+            tempoStagger--;
+            return;
+        }
+        
         int vel = getVelocidade();
         setRotation(0);
         setRotation(270);
@@ -45,6 +52,11 @@ public class Inimigo extends Personagem
     
     public int atacar(){
         return getDano();
+    }
+    
+    public void levarStagger(){
+        move (-15);
+        tempoStagger = 10;
     }
         
 }

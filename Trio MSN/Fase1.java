@@ -42,11 +42,12 @@ public class Fase1 extends Fase
         //incializa o jogador no spawn
         Jogador jogador = new Jogador();
         addObject(jogador, 100, 366);
-        
+
         //Spawn dos inimigos
         Inimigo inimigo1 = new Inimigo(1000, 650, 700, 200);
         addObject(inimigo1, 750, 352);
-        
-        
+
+        Perseguidor perseguidor = new Perseguidor();
+        addObject(perseguidor,1006,133);
     }    
 }
