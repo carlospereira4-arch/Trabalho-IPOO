@@ -18,7 +18,6 @@ public class Perseguidor extends Inimigo
     public void act()
     {
         verAlvo();
-        atacar();
     }
     
     @Override
