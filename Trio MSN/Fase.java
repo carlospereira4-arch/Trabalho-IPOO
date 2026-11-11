@@ -1,5 +1,5 @@
 import greenfoot.*;
-
+import java.util.*;
 /** Placar e cronometro compartilhados pelas tres fases. */
 public class Fase extends World
 {
@@ -9,6 +9,8 @@ public class Fase extends World
     private Partida partida;
     private int numero;
     private boolean encerrada;
+    private Jogador jogador;
+    private int pontos;
 
     public Fase(String imagem, int numero)
     {
@@ -21,15 +23,27 @@ public class Fase extends World
         this.partida = partida;
         this.numero = numero;
         setBackground(imagem);
+        jogador = new Jogador();
 
         // Faixa escura para os textos aparecerem sobre qualquer piso.
         getBackground().setColor(new Color(15, 10, 15));
         getBackground().fillRect(0, 0, 1200, 40);
-        showText("Pontos: 0", 100, 20);
         showText("Fase " + numero, 600, 20);
         atualizarPainel();
     }
 
+    public void addPontuacao(int pontos){
+        this.pontos += pontos;
+    }
+    
+    public int getPontuacao(){
+        return pontos;
+    }
+    
+    protected Jogador getJogador(){
+        return jogador;
+    }
+    
     public void started()
     {
         ultimaAtualizacao = System.nanoTime();
@@ -39,6 +53,11 @@ public class Fase extends World
     {
         contarTempo();
         atualizarPainel();
+        
+        if (getObjects(Inimigo.class).isEmpty())
+        {
+            vencerFase();
+        }
     }
 
     public void stopped()
@@ -104,12 +123,15 @@ public class Fase extends World
     {
         stopped();
         encerrada = true;
-        // O placar ainda e ilustrativo: integrar os pontos reais depois.
-        partida.registrarFase(numero, 0, tempoAcumulado);
+        
+        partida.registrarFase(numero, pontos, tempoAcumulado);
     }
 
     private void atualizarPainel()
     {
+        showText("Pontos: " + pontos, 100, 20);
+        showText("Vida: " + jogador.getVidaJogador(), 300, 20);
+        
         int segundosTotais = getTempoSegundos();
         if (segundosTotais != ultimoSegundo)
         {
@@ -120,4 +142,16 @@ public class Fase extends World
             ultimoSegundo = segundosTotais;
         }
     }
+    
+    /** Metodo sera usado inicialmente para tela de vitoria aparecer na fase 1 */
+    public void vencerFase(){
+        if (encerrada){
+            return;
+        }
+        
+        guardarResultado();
+        Greenfoot.setWorld(new TelaFinal(true, partida));
+    
+    }
+    
 }
