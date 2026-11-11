@@ -1,0 +1,14 @@
+# Java compilado
+*.class
+
+# Arquivos auxiliares do Greenfoot
+*.ctxt
+
+# Configuracoes locais de editores
+.idea/
+*.iml
+.vscode/
+
+# Arquivos do Windows
+Thumbs.db
+Desktop.ini
