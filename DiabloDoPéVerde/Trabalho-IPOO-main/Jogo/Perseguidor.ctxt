@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Perseguidor
+comment0.text=\n\ Write\ a\ description\ of\ class\ Perseguidor\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=Perseguidor()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ movimentar()
+comment4.params=
+comment4.target=void\ verAlvo()
+numComments=5

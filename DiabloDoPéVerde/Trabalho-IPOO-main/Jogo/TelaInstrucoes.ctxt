@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=TelaInstrucoes
+comment0.text=Explica\ o\ objetivo\ do\ jogo\ e\ permite\ voltar\ ao\ menu.
+comment1.params=
+comment1.target=TelaInstrucoes()
+comment2.params=
+comment2.target=void\ act()
+numComments=3

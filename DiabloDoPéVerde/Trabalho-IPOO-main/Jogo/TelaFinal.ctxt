@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=TelaFinal
+comment0.text=Mostra\ o\ resultado\ e\ permite\ comecar\ uma\ nova\ partida.
+comment1.params=
+comment1.target=TelaFinal()
+comment1.text=Permite\ visualizar\ a\ tela\ pelo\ menu\ de\ classes\ do\ Greenfoot.
+comment2.params=venceu\ partida
+comment2.target=TelaFinal(boolean,\ Partida)
+comment3.params=
+comment3.target=void\ act()
+numComments=4

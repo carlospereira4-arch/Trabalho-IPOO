@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Pocao
+comment0.text=\n\ itens\ coletaveis\ que\ recupera\ vida(po\u00E7ao\ de\ cura).\n\ \n\ @author\ (Bruno\ Gualberto)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=Pocao()
+comment2.params=
+comment2.target=int\ getCura()
+numComments=3
