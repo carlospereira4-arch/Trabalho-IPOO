@@ -5,6 +5,7 @@ public class Partida
 {
     private ArrayList<Integer> pontos = new ArrayList<Integer>();
     private ArrayList<Long> tempos = new ArrayList<Long>();
+    private int vida = 100;
 
     public Partida()
     {
@@ -35,5 +36,12 @@ public class Partida
     public int getTempoTotalSegundos()
     {
         return (int) ((tempos.get(0) + tempos.get(1) + tempos.get(2)) / 1000000000L);
+    }
+    
+    public int getVida(){
+        return vida;
+    }
+    public void setVida(int Vida){
+        this.vida = vida;
     }
 }

@@ -115,4 +115,8 @@ public class Jogador extends Personagem
         }
     }
     
+    public void setVidaJogador(int vida){
+        vidaJogador.setVida(vida);
+}
+    
 }

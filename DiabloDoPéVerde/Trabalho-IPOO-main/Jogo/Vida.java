@@ -36,5 +36,9 @@ public class Vida
         vida -= dano;
         if (vida < 0) vida = 0;
     }
+    
+    public void setVida(int vida){
+        this.vida = vida;
+}
 
 }

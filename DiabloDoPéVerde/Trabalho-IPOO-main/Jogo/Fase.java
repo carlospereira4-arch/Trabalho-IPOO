@@ -56,7 +56,7 @@ public class Fase extends World
         
         if (getObjects(Inimigo.class).isEmpty())
         {
-            vencerFase();
+            concluirFase();
         }
     }
 
@@ -125,6 +125,7 @@ public class Fase extends World
         encerrada = true;
         
         partida.registrarFase(numero, pontos, tempoAcumulado);
+        partida.setVida(jogador.getVidaJogador());
     }
 
     private void atualizarPainel()
@@ -141,17 +142,6 @@ public class Fase extends World
             showText("Tempo: " + tempo, 1000, 20);
             ultimoSegundo = segundosTotais;
         }
-    }
-    
-    /** Metodo sera usado inicialmente para tela de vitoria aparecer na fase 1 */
-    public void vencerFase(){
-        if (encerrada){
-            return;
-        }
-        
-        guardarResultado();
-        Greenfoot.setWorld(new TelaFinal(true, partida));
-    
     }
     
 }

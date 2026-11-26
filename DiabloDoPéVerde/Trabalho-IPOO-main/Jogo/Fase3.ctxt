@@ -1,9 +1,0 @@
-#BlueJ class context
-comment0.target=Fase3
-comment0.text=\n\ Write\ a\ description\ of\ class\ Fase3\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=
-comment1.target=Fase3()
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Fase3.\n\ \n
-comment2.params=partida
-comment2.target=Fase3(Partida)
-numComments=3
